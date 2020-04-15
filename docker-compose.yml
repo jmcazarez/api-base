@@ -15,7 +15,7 @@ services:
             MYSQL_PORT: 3306
             MYSQL_DATABASE: demo
             MYSQL_USER: mysql
-            MYSQL_PASSWORD: adsum123
+            MYSQL_PASSWORD: 123
         ports:
             - "666:3000"
         depends_on:
