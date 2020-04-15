@@ -19,7 +19,7 @@ services:
         volumes:
             - "./api:/app/"
         ports:
-            - "9999:3000"
+            - "666:3000"
         depends_on:
             - db
         restart: on-failure 
