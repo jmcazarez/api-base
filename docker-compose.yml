@@ -3,11 +3,11 @@ services:
     db:
         build: ./db
         environment:
-        MYSQL_DATABASE: demo
-        MYSQL_ROOT_PASSWORD: 123
-        MYSQL_USER: mysql
-        MYSQL_PASSWORD: 123
-        DATABASE_HOST: db
+            MYSQL_DATABASE: demo
+            MYSQL_ROOT_PASSWORD: 123
+            MYSQL_USER: mysql
+            MYSQL_PASSWORD: 123
+            DATABASE_HOST: db
     api:
         build: ./api
         environment:
