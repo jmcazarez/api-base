@@ -16,8 +16,6 @@ services:
             MYSQL_DATABASE: demo
             MYSQL_USER: mysql
             MYSQL_PASSWORD: adsum123
-        volumes:
-            - "./api:/app/"
         ports:
             - "666:3000"
         depends_on:
