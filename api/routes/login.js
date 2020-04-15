@@ -10,7 +10,7 @@ const respuestaError = {
    };
 
 router.get('/', function(req, res, next) {
-    res.send('Login service ...');
+    res.send('Login service ....');
 });
 
 router.post('/validar', function(req, res, next) {
