@@ -8,6 +8,8 @@ services:
             MYSQL_USER: mysql
             MYSQL_PASSWORD: 123
             DATABASE_HOST: db
+        volumes:
+            - /opt/mysql_data:/var/lib/mysql
     api:
         build: ./api
         environment:
