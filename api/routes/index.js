@@ -25,7 +25,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  res.send(process.env.DATABASE_HOST);
   // var q = 'SELECT * from characters';
 	// var allegiance = 'select id, name from allegiance';
 	// var ability = 'select id, type from ability';
