@@ -23,10 +23,9 @@ router.get('/', function(req, res, next) {
       console.error("error connecting: " + err.stack);
       return process.exit(22); //consistently exit so the Docker container will restart until it connects to the sql db
     }
-    console.log("connected as id " + connection.threadId);
+    res.send(connection.threadId);
   });
 
-  res.send(process.env.DATABASE_HOST);
   // var q = 'SELECT * from characters';
 	// var allegiance = 'select id, name from allegiance';
 	// var ability = 'select id, type from ability';
