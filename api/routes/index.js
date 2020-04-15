@@ -25,7 +25,46 @@ connection.connect(function(err){
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'ADSUM' });
+  var q = 'SELECT * from characters';
+	var allegiance = 'select id, name from allegiance';
+	var ability = 'select id, type from ability';
+	var character = 'select id, first_name from characters';
+
+	/* query for characters, abilities, and allegiances then
+	pass the results into the page so the drop downs can be populated */
+	connection.query(allegiance, function(error, results, fields){
+		if(error) throw error;
+		allegiance = results;
+		//console.log(allegiance);
+		return;
+	});
+
+	connection.query(ability, function(error, results, fields){
+		if(error) throw error;
+		ability = results;
+		//console.log(ability);
+		return;
+	});
+
+	connection.query(character, function(error, results, fields){
+		if(error) throw error;
+		character = results;
+		//console.log(character);
+		return;
+	});
+
+
+	connection.query(q, function(error, results, fields){
+		if(error) throw error;
+		console.log("rendering home page . . .");
+		res.render('home', {
+			title: "Stormlight Archive DB",
+			results: results,
+			allegiance: allegiance,
+			ability: ability,
+			character: character
+		});
+	});
 });
 
 module.exports = router;
