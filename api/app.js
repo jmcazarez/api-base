@@ -11,10 +11,10 @@ var usuariosRouter = require('./routes/usuarios');
 
 var app = express();
 
-app.options('*', cors()); // include before other routes
-
 // Configurar cabeceras y cors
 app.use(cors());
+
+app.options('*', cors()); // include before other routes
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
