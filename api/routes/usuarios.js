@@ -35,7 +35,7 @@ router.get('/:id', function(req, res, next) {
 router.post('/', function(req, res, next) {
     
     var newUsuario = {
-        cLogin: req.body.cUsuario,
+        cLogin: req.body.cLogin,
         cNombre: req.body.cNombre,
         cApellidoPaterno: req.body.cApellidoPaterno,
         cApellidoMaterno: req.body.cApellidoMaterno,
@@ -57,7 +57,7 @@ router.post('/', function(req, res, next) {
 router.put('/:id', function(req, res, next) {
     
     var updateUsuario = {
-        cLogin: req.body.cUsuario,
+        cLogin: req.body.cLogin,
         cNombre: req.body.cNombre,
         cApellidoPaterno: req.body.cApellidoPaterno,
         cApellidoMaterno: req.body.cApellidoMaterno,
