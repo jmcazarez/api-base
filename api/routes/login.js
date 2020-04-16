@@ -14,6 +14,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/validar', function(req, res, next) {
+
     if(!req.body.cUsuario || !req.body.cPassword) {
         respuesta = {
          error: true,
@@ -21,6 +22,7 @@ router.post('/validar', function(req, res, next) {
          mensaje: 'El campo usuario y/o contraseña son requeridos'
         };
         res.status(404);
+        res.send({error: true, message: 'Falta especificar usuario y/o contraseña', codigo: res.statusCode });
        } else {
          
             request.post({
@@ -29,7 +31,7 @@ router.post('/validar', function(req, res, next) {
                 "body": JSON.stringify({
                     "cUsuario": req.body.cUsuario,
                     "cPassword": req.body.cPassword,
-                    "cSistema": "REPRO"
+                    "cSistema": "MEANP"
                 })
             }, (error, response, body) => {
                 if(body) {
@@ -41,8 +43,7 @@ router.post('/validar', function(req, res, next) {
             });
 
        }
-       
-       // res.send(respuesta);
+
 });
 
 module.exports = router;

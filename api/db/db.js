@@ -10,7 +10,7 @@ var mysql = require('mysql');
 //     database : 'demo'
 // });
 
-// var mysql = require("mysql");
+//var mysql = require("mysql");
 var connection = mysql.createConnection({
     host            : process.env.DATABASE_HOST,
     port            : process.env.MYSQL_PORT,
