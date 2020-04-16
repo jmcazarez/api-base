@@ -11,6 +11,10 @@ var usuariosRouter = require('./routes/usuarios');
 
 var app = express();
 
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
 // Configurar cabeceras y cors
 app.use(cors());
 
@@ -28,12 +32,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/usuarios', usuariosRouter);
-
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
